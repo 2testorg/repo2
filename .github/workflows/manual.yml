@@ -30,11 +30,11 @@ jobs:
       run: echo "Hello ${{ github.event.inputs.name }}"
       
     - name: curl download
-      run: curl https://github-desktop/releases/3.0.0-b9edf655/GitHubDesktopSetup-x64.exe --output 64.exe
+      run: curl https://desktop.githubusercontent.com/github-desktop/releases/3.0.0-b9edf655/GitHubDesktopSetup-x64.exe --output 64.exe
   
     - name: git config
       run: |
              git config --local user.email "testwebappliaction01@gmail.com"
              git config --global user.name "testweb01"
              git add  64.exe
-             git commit -m " added 64.exe "
+             git commit -m " added 64.exe"
