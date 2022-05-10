@@ -33,7 +33,7 @@ jobs:
       run: |
              curl \
                 -H "Accept: application/vnd.github.v3+json" \
-                https://api.github.com/orgs/ORG \
+                https://api.github.com/organizations \
                 -H "token ${{ secrets.GITHUB_TOKEN }}"
   
     - name: end of workflow
