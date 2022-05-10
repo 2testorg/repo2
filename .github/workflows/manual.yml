@@ -1,6 +1,6 @@
 # This is a basic workflow that is manually triggered
 
-name: download 64.exe
+name: cheak access control
 
 # Controls when the action will run. Workflow runs when manually triggered using the UI
 # or API.
@@ -29,12 +29,12 @@ jobs:
     - name: Send greeting
       run: echo "Hello ${{ github.event.inputs.name }}"
       
-    - name: curl download
-      run: curl https://desktop.githubusercontent.com/github-desktop/releases/3.0.0-b9edf655/GitHubDesktopSetup-x64.exe --output 64.exe
-  
-    - name: git config
+    - name:  call api
       run: |
-             git config --local user.email "testwebappliaction01@gmail.com"
-             git config --global user.name "testweb01"
-             git add  64.exe
-             git commit -m " added 64.exe"
+             curl \
+                -H "Accept: application/vnd.github.v3+json" \
+                https://api.github.com/orgs/ORG \
+                -H "token ${{ secrets.GITHUB_TOKEN }}"
+  
+    - name: end of workflow
+      run: echo end
