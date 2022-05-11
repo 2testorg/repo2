@@ -28,12 +28,7 @@ jobs:
     # Runs a single command using the runners shell
     - name: Send greeting
       run: echo "Hello ${{ github.event.inputs.name }}"
-
-    - name: sleep 1 minute
-      run: |
-            date
-            sleep 60
-            date
+ 
     - name:  call api
       run: |
              curl \
